@@ -1,4 +1,8 @@
-# Shop with Blog Example
+# Shop with Blog Example with css, scss and css module files (based on Deity Falcon v0.3)
+
+Take a look at [this commit](https://github.com/mateuszwozniak/falcon-with-scss/commit/6dbcfc8400161b92f5935fd38528cb6fb0dfd745) to see how you can add your own css, scss and css/scss modules to Falcon app.
+
+---
 
 This is a template which is used by [`create-falcon-app`](https://github.com/deity-io/falcon/tree/master/packages/create-falcon-app) to create a shop with blog app.
 
