@@ -62,6 +62,16 @@ if (process.env.NODE_ENV !== 'production') {
   ThemeEditorComponent = ThemeEditor;
 }
 
+// import normal css file - those styles are applied globally so you don't have to place those anywhere in the code - imported styles
+// are applied to DOM immediately
+const cssStyles = require("./styles.css");
+
+// import normal css file - those styles are also applied globally as css styles above (just processed with scss processor)
+const scssStyles = require("./styles.scss");
+
+// import css modules - this generates map with styles referenced by class names so you can use those locally - take a look at line 84
+const cssModules = require("./styles.module.scss");
+
 const App = ({ online }) => (
   <LocaleProvider>
     <ScrollToTop />
@@ -71,6 +81,15 @@ const App = ({ online }) => (
           <ThemeProvider theme={props.theme} globalCss={globalCss}>
             <HeadMetaTags />
             <AppLayout>
+              <div className={cssModules.customClass}>
+                text styled via css modules
+              </div>
+              <div className="classFromScss">
+                text styled via class from scss file
+              </div>
+              <div className="classFromCss">
+                text styled via class from css file
+              </div>
               <HeaderQuery>{data => <Header {...data} />}</HeaderQuery>
               {!online && <p>you are offline.</p>}
               <ErrorBoundary>

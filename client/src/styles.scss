@@ -1,0 +1,8 @@
+$primary-color: blue;
+$secondary-color: yellow;
+
+.classFromScss {
+  color: $primary-color;
+  background-color: $secondary-color;
+  padding: 10px;
+}
